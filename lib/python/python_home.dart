@@ -1,5 +1,6 @@
 import 'package:arch_empower/arch_empower.dart';
 import 'package:flutter/material.dart';
+import 'package:maeiee_arch/python/project_mangement/poetry/poetry.dart';
 
 class PythonHome extends StatelessWidget {
   const PythonHome({super.key});
@@ -10,13 +11,17 @@ class PythonHome extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Maeiee 的 Python 技能树"),
       ),
+      backgroundColor: Colors.white,
       body: const SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: SizedBox(
-            width: 1200,
-            child: Group(title: "Python"),
+            width: 800,
+            child: Group(
+              title: "Python",
+              child: C(children: [Poetry()]),
+            ),
           ),
         ),
       ),
