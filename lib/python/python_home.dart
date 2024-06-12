@@ -1,5 +1,6 @@
 import 'package:arch_empower/arch_empower.dart';
 import 'package:flutter/material.dart';
+import 'package:maeiee_arch/python/database/mongodb/mongoengine/mongo_engine.dart';
 import 'package:maeiee_arch/python/gui/edifice/edifice.dart';
 import 'package:maeiee_arch/python/project_mangement/poetry/poetry.dart';
 
@@ -18,16 +19,31 @@ class PythonHome extends StatelessWidget {
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: SizedBox(
-            width: 800,
+            width: 1600,
             child: Group(
               title: "Python",
-              child: C(children: [
-                Group(title: 'GUI', child: C(children: [Edifice()])),
-                Group(
-                  title: '工程管理',
-                  child: C(children: [Poetry()]),
-                )
-              ]),
+              child: R(
+                children: [
+                  C(children: [
+                    Group(title: 'GUI', child: C(children: [Edifice()])),
+                    Group(
+                      title: '工程管理',
+                      child: C(children: [Poetry()]),
+                    )
+                  ]),
+                  C(children: [
+                    Group(
+                      title: '数据库',
+                      child: C(children: [
+                        Group(
+                          title: 'MongoDB',
+                          child: C(children: [MongoEngine()]),
+                        ),
+                      ]),
+                    ),
+                  ]),
+                ],
+              ),
             ),
           ),
         ),

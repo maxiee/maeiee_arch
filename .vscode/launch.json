@@ -8,10 +8,6 @@
             "name": "maeiee_arch",
             "request": "launch",
             "type": "dart",
-            "args": [
-                "-d",
-                "chrome"
-            ]
         },
         {
             "name": "maeiee_arch (profile mode)",
